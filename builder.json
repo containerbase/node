@@ -1,0 +1,6 @@
+{
+  "image": "node",
+  "startVersion": "12.16.0",
+  "cache": "docker-build-cache",
+  "maxVersions": 50
+}
