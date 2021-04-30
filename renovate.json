@@ -1,11 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>containerbase/.github"],
-  "packageRules": [
-    {
-      "paths": ["+(renovate.Dockerfile)"],
-      "updateTypes": ["major"],
-      "enabled": false
-    }
-  ]
+  "extends": ["github>containerbase/.github"]
 }
