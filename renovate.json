@@ -1,4 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>containerbase/.github"]
+  "extends": ["github>containerbase/.github"],
+  "packageRules": [
+    {
+      "description": "Update node minor versions",
+      "matchFiles": ["renovate.Dockerfile"],
+      "matchUpdateTypes": [ "minor"],
+      "enabled": true
+    }
+  ]
 }
