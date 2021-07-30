@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=node versioning=node
-ARG NODE_VERSION=14.17.3
+ARG NODE_VERSION=14.17.4
 
 FROM ghcr.io/containerbase/buildpack:1.13.0@sha256:8556dd89e7635009cecfb1212185f5019f4855916e730aaa3e026767228bad39
 
