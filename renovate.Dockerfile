@@ -1,7 +1,7 @@
 # renovate rebuild trigger
 
 # EOL: 2022-04-30
-FROM node:12.22.5@sha256:38dac2d5f70a91c9c68fe284a729cc49e444dad0a7e5388bcaf5c70f645c17e7
+FROM node:12.22.5@sha256:185ac0882d8dc6ddc37c2de051dc49131a273a6d778b63804d1d505cb98b79cb
 
 # EOL: 2023-04-30
 FROM node:14.17.5@sha256:adbbb61dab70ea6e5a6c2ad7fba60e4d1047ba98ad1afcd631c15553163b22b7
