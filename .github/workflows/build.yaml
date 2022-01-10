@@ -16,6 +16,10 @@ env:
   DRY_RUN: ${{ github.ref != 'refs/heads/main' }}
   OWNER: ${{ github.repository_owner }}
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
