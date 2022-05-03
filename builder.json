@@ -1,7 +1,7 @@
 {
   "image": "node",
   "versioning": "semver",
-  "startVersion": "12.16.0",
+  "startVersion": "14.15.0",
   "extractVersion": "^v(?<version>.*)$",
   "cache": "docker-build-cache"
 }
