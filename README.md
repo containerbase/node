@@ -6,4 +6,6 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/containerbase/node)
 ![License: MIT](https://img.shields.io/github/license/containerbase/node)
 
-This repository is the source for the Docker Hub image `containerbase/node`. Commits to `main` branch are automatically built and published.
+This repository is the source for the Docker Hub image [`containerbase/node`](https://hub.docker.com/r/containerbase/node).
+Commits to `main` branch are automatically built and published.
+This image is also available as `ghcr.io/containerbase/node`.
