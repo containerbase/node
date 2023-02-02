@@ -7,7 +7,7 @@ on:
       - 'renovate/**'
 
   pull_request:
-  
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
@@ -18,11 +18,13 @@ env:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      packages: write
 
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
@@ -35,9 +37,39 @@ jobs:
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.OWNER }} --password-stdin
 
-      - name: Publish
+      - name: Publish to docker.io
         uses: renovatebot/internal-tools@7778512bff496865804bf1c70d9c925defcb697c # v1.14.13
         with:
           command: docker-builder
           image-prefix: ${{ env.OWNER }}
           dry-run: ${{ env.DRY_RUN }}
+
+      - name: Publish to ghcr.io
+        uses: renovatebot/internal-tools@8b36136de47a39691cf88806e73d488d62e903cf # v1.14.13
+        with:
+          command: docker-builder
+          image-prefix: ghcr.io/${{ env.OWNER }}
+          major-minor: false
+          dry-run: ${{ env.DRY_RUN }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.3.0
+
+      - name: Init
+        run: ./bin/init.sh
+
+      - uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37 # v1.12.0
+        if: env.DRY_RUN == 'false'
+        with:
+          allowUpdates: true
+          body: See https://github.com/nodejs/node/releases/tag/v${{ env.VERSION }} for more changes
+          commit: ${{ github.sha }}
+          name: ${{ env.VERSION }}
+          tag: v${{ env.VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
