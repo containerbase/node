@@ -2,7 +2,7 @@
   "image": "node",
   "versioning": "semver",
   "startVersion": "14.15.0",
-  "allowedVersions": "^14.15.0 || >=16.10.0",
+  "allowedVersions": "^14.15.0 || ^16.10.0 || >=18.12.0",
   "extractVersion": "^v(?<version>.*)$",
   "cache": "docker-build-cache"
 }
