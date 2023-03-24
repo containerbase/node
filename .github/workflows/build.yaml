@@ -41,6 +41,7 @@ jobs:
         uses: containerbase/internal-tools@89d9c967267883b8747e497ecf135bb14ca9abe6 # v1.17.0
         with:
           command: docker-builder
+          platforms: linux/amd64,linux/arm64
           image-prefix: ${{ env.OWNER }}
           dry-run: ${{ env.DRY_RUN }}
 
@@ -48,6 +49,7 @@ jobs:
         uses: containerbase/internal-tools@89d9c967267883b8747e497ecf135bb14ca9abe6 # v1.17.0
         with:
           command: docker-builder
+          platforms: linux/amd64,linux/arm64
           image-prefix: ghcr.io/${{ env.OWNER }}
           major-minor: false
           dry-run: ${{ env.DRY_RUN }}
