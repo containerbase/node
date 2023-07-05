@@ -2,7 +2,7 @@
 # https://github.com/nodejs/release#release-schedule
 
 # EOL: 2024-04-30
-FROM node:16.20.1@sha256:0e77d928019494fc66f46db12e5a941d3e1413b353a9b537d8848c99fc72db37
+FROM node:16.20.1@sha256:466d0a05ecb1e5b9890960592311fa10c2bc6012fc27dbfdcc74abf10fc324fc
 
 # EOL: 2025-04-30
 FROM node:18.16.1@sha256:c7c56cb821fa013b9061d04e50ab74e0f316242d1635ca7ac597880542468285
