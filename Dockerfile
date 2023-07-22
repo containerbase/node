@@ -1,7 +1,7 @@
 # renovate: datasource=node-version depName=node versioning=node
 ARG NODE_VERSION=18.17.0
 
-FROM ghcr.io/containerbase/base:9.6.2@sha256:6ea80fd004bbe338c67131c5dc48571d2413fe41923eeadd2c6ac312c126bc7a
+FROM ghcr.io/containerbase/base:9.7.0@sha256:4b412a3024971f5fa3690727f4b112a6b47ffbab845344d031b2245fd7188b7c
 
 ARG NODE_VERSION
 RUN install-tool node
