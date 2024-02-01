@@ -5,7 +5,7 @@
     {
       "description": "Update node minor versions",
       "matchFiles": ["renovate.Dockerfile"],
-      "matchUpdateTypes": [ "minor"],
+      "matchUpdateTypes": ["minor"],
       "enabled": true
     }
   ]

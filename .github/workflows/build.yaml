@@ -14,12 +14,24 @@ concurrency:
 env:
   DRY_RUN: ${{ github.ref != 'refs/heads/main' }}
   OWNER: ${{ github.repository_owner }}
+  HUSKY: 0
 
 permissions:
   contents: read
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm prettier
+
   build:
+    needs:
+      - lint
     runs-on: ubuntu-latest
     permissions:
       id-token: write
