@@ -1,5 +1,5 @@
 # renovate: datasource=node-version depName=node versioning=node
-ARG NODE_VERSION=20.11.0
+ARG NODE_VERSION=20.11.1
 
 FROM ghcr.io/containerbase/base:10.0.1@sha256:d24f4c68845feefe4887bc5f0ad77569f5107b048e55da1ea61282f8e6fd5ad0
 
