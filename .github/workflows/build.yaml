@@ -49,7 +49,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.OWNER }} --password-stdin
 
       - name: Publish to docker.io
-        uses: containerbase/internal-tools@fcbf031ba03a836d9502ea4da2f15f2848359561 # v3.0.68
+        uses: containerbase/internal-tools@a988aa91013c6f1f235d461ab48b6b572facaac4 # v3.0.70
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
@@ -57,7 +57,7 @@ jobs:
           dry-run: ${{ env.DRY_RUN }}
 
       - name: Publish to ghcr.io
-        uses: containerbase/internal-tools@fcbf031ba03a836d9502ea4da2f15f2848359561 # v3.0.68
+        uses: containerbase/internal-tools@a988aa91013c6f1f235d461ab48b6b572facaac4 # v3.0.70
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
