@@ -45,16 +45,7 @@ jobs:
       - name: Docker registry login
         if: env.DRY_RUN == 'false'
         run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.OWNER }} --password-stdin
-
-      - name: Publish to docker.io
-        uses: containerbase/internal-tools@bbe92263bdc6c66203234f0ab89695137157506c # v3.3.11
-        with:
-          command: docker-builder
-          platforms: linux/amd64,linux/arm64
-          image-prefix: ${{ env.OWNER }}
-          dry-run: ${{ env.DRY_RUN }}
 
       - name: Publish to ghcr.io
         uses: containerbase/internal-tools@bbe92263bdc6c66203234f0ab89695137157506c # v3.3.11
