@@ -48,7 +48,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.OWNER }} --password-stdin
 
       - name: Publish to ghcr.io
-        uses: containerbase/internal-tools@61cdbfdb63e1ead978829d1c75ed36c0f3120512 # v3.3.12
+        uses: containerbase/internal-tools@c93a92a6d7c698ca2030b1067b25c0c25bac45a2 # v3.3.13
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
