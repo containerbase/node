@@ -9,4 +9,4 @@ RUN install-tool node
 LABEL org.opencontainers.image.source="https://github.com/containerbase/node" \
       org.opencontainers.image.version="${NODE_VERSION}"
 
-USER 1000
+USER 12021
