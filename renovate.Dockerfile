@@ -3,7 +3,7 @@
 
 
 # EOL: 2025-04-30
-FROM node:18.20.6@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
+FROM node:18.20.6@sha256:c8aac350ebe385788df96e024bc6ce92ddb954de24ddd6f391f6d492c2447c62
 
 # EOL: 2026-04-30
 FROM node:20.18.2@sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb
