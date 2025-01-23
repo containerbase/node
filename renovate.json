@@ -4,7 +4,7 @@
   "packageRules": [
     {
       "description": "Update node minor versions",
-      "matchFiles": ["renovate.Dockerfile"],
+      "matchFileNames": ["renovate.Dockerfile"],
       "matchUpdateTypes": ["minor"],
       "enabled": true
     }
