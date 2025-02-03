@@ -7,6 +7,12 @@
       "matchFileNames": ["renovate.Dockerfile"],
       "matchUpdateTypes": ["minor"],
       "enabled": true
+    },
+    {
+      "description": "separate multiple node major",
+      "matchFileNames": ["renovate.Dockerfile"],
+      "separateMultipleMajor": true,
+      "additionalBranchPrefix": "node-major"
     }
   ]
 }
