@@ -6,7 +6,7 @@ FROM ghcr.io/containerbase/base:13.23.6@sha256:af7c74e000727bfc7641235ddfaabd606
 ARG NODE_VERSION
 
 RUN set -ex; \
-  if dpkg --compare-versions "${NODE_VERSION}" lt 25.0.0; then; install-apt libatomic1; fi; \
+  if dpkg --compare-versions "${NODE_VERSION}" lt 25.0.0; then install-apt libatomic1; fi; \
   true
 
 RUN install-tool node
