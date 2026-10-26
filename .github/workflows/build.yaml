@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@796ee0d220d828ac43560c5d3df409f6a29f8bf0 # v5.3.10
+        uses: containerbase/internal-tools/setup@24d505d494763b38cc2c3a4024f399055d741490 # v5.3.11
         with:
           save-cache: true
 
@@ -51,7 +51,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.OWNER }} --password-stdin
 
       - name: Publish to ghcr.io
-        uses: containerbase/internal-tools@796ee0d220d828ac43560c5d3df409f6a29f8bf0 # v5.3.10
+        uses: containerbase/internal-tools@24d505d494763b38cc2c3a4024f399055d741490 # v5.3.11
         with:
           command: docker-builder
           platforms: linux/amd64,linux/arm64
