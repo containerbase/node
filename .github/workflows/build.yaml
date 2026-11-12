@@ -28,7 +28,7 @@ jobs:
         with:
           save-cache: true
 
-      - run: pnpm prettier
+      - run: pnpm oxfmt
 
   build:
     needs:
