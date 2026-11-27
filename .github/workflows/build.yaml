@@ -65,7 +65,8 @@ jobs:
     needs:
       - lint
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # rebuilding all node versions takes several hours
+    timeout-minutes: 360
     permissions:
       id-token: write
       packages: write
